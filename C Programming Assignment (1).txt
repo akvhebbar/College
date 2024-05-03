@@ -1,0 +1,233 @@
+// C program to check if a character is a vowel or consonant
+#include <stdio.h>
+int main()
+{
+	char ch = 'A';
+	if (ch == 'a' || ch == 'A' || ch == 'e' || ch == 'E'
+		|| ch == 'i' || ch == 'I' || ch == 'o' || ch == 'O'
+		|| ch == 'u' || ch == 'U') {
+
+		printf("The character %c is a vowel.\n", ch);
+	}
+	else {
+		printf("The character %c is a consonant.\n", ch);
+	}
+
+	return 0;
+}
+
+
+
+// write a C Program to print multiplication table of 5
+#include <stdio.h>
+int main()
+{
+
+	int N = 5, i = 1;
+	do 
+	{
+		printf("%d\tx\t%d\t=\t%d\n", N, i, N * i);
+	} 
+	while (i++ < 10);
+	return 0;
+}
+
+
+
+// Write a C program to print the Floyd's Triangle
+#include <stdio.h>
+int main() 
+{
+   int n,i,j,k = 1;
+   printf("Enter the number of rows for for Floyd's Triangle ");
+   scanf("%d",&n);
+   for(i = 1; i <= n; i++)
+   {
+      for(j = 1;j <= i; j++)
+         printf("%3d", k++);
+
+      printf("\n");
+   }
+
+   return 0;
+}
+
+//Write a C program to convert lowercase to uppercase character
+#include <stdio.h>
+#include <string.h>
+
+int main() {
+   char s[100];
+   int i;
+   printf("\nEnter a string : ");
+   gets(s);
+
+   for (i = 0; s[i]!='\0'; i++) {
+      if(s[i] >= 'a' && s[i] <= 'z') {
+         s[i] = s[i] - 32;
+      }
+   }
+   printf("\nString in Upper Case = %s", s);
+   return 0;
+}
+
+
+// write a C program to convet binary number to decimal number
+// convert binary to decimal
+
+#include <stdio.h>
+#include <math.h>
+
+// function prototype
+int convert(long long);
+
+int main() {
+
+  long long n;
+
+  printf("Enter a binary number: ");
+  scanf("%lld", &n);
+
+  printf("%lld in binary = %d in decimal", n, convert(n));
+
+  return 0;
+}
+
+// function definition
+int convert(long long n) {
+
+  int dec = 0, i = 0, rem;
+
+  while (n != 0) {
+
+    // get remainder of n divided by 10
+    rem = n % 10;
+
+    // divide n by 10
+    n /= 10;
+
+    // multiply rem by (2 ^ i)
+    // add the product to dec
+    dec += rem * pow(2, i);
+
+    // increment i
+    ++i;
+  }
+
+  return dec;
+}
+
+//Write a C program to check the number of days in a given month
+// C program for the above approach 
+#include <stdio.h> 
+
+// Function to find the number of Days 
+// in month input by user 
+void printNumberOfDays(int N) 
+{ 
+
+	// Check for 31 Days 
+	if (N == 1 || N == 3 || N == 5 
+		|| N == 7 || N == 8 || N == 10 
+		|| N == 12) { 
+		printf("31 Days."); 
+	} 
+
+	// Check for 30 Days 
+	else if (N == 4 || N == 6 
+			|| N == 9 || N == 11) { 
+		printf("30 Days."); 
+	} 
+
+	// Check for 28/29 Days 
+	else if (N == 2) { 
+		printf("28/29 Days."); 
+	} 
+
+	// Else Invalid Input 
+	else { 
+		printf("Invalid Month."); 
+	} 
+} 
+
+// Driver Code 
+int main() 
+{ 
+	// Input Month 
+	int N = 4; 
+
+	// Function Call 
+	printNumberOfDays(N); 
+
+	return 0; 
+} 
+//Write a C program to calculate the standard deviation
+#include <stdio.h>
+#include<math.h>
+int main() 
+{
+    float a[50],sum=0,sum1=0meanv,sd;
+    int n,i;
+    printf("enter the number of observation:/n);
+    scanf("%d",&n);
+    printf+"Enter each observation:");
+    for(i=0;i<n;i++)/*accepting in array*/
+    {
+        scanf("%f",&a[i]);
+    }
+    for(i=0;<n;i++)/*sum of each value*/
+    {
+        sum=sum+a[i];
+    }
+    mean=sum/n;/*mean*/
+    for(i=0;i<n;i++)
+    {
+        sum1=sum1+(meana[i])/*variance*/
+    }
+    v=sum1/n;
+    sd=sqrt(v);/*std.dev*/
+    printf("nmean is%f",mean);
+    printf("\n mean is %f",mean);
+    Printf ("\n standard deviation is%f',sd);
+    return 0;
+}
+//Write a C program to compose the transpose of the matrix
+#include <stdio.h>
+int main() {
+  int a[10][10], transpose[10][10], r, c;
+  printf("Enter rows and columns: ");
+  scanf("%d %d", &r, &c);
+
+  // asssigning elements to the matrix
+  printf("\nEnter matrix elements:\n");
+  for (int i = 0; i < r; ++i)
+  for (int j = 0; j < c; ++j) {
+    printf("Enter element a%d%d: ", i + 1, j + 1);
+    scanf("%d", &a[i][j]);
+  }
+
+  // printing the matrix a[][]
+  printf("\nEntered matrix: \n");
+  for (int i = 0; i < r; ++i)
+  for (int j = 0; j < c; ++j) {
+    printf("%d  ", a[i][j]);
+    if (j == c - 1)
+    printf("\n");
+  }
+
+  // computing the transpose
+  for (int i = 0; i < r; ++i)
+  for (int j = 0; j < c; ++j) {
+    transpose[j][i] = a[i][j];
+  }
+
+  // printing the transpose
+  printf("\nTranspose of the matrix:\n");
+  for (int i = 0; i < c; ++i)
+  for (int j = 0; j < r; ++j) {
+    printf("%d  ", transpose[i][j]);
+    if (j == r - 1)
+    printf("\n");
+  }
+  return 0;
+}
