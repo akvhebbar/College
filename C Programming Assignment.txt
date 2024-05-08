@@ -1,0 +1,270 @@
+(1)
+// write a C Program to print multiplication table of 5
+#include <stdio.h>
+int main()
+{
+
+	int N = 5;
+	for(int i=1;i<=10;i++)
+	{
+		printf("%d\tx\t%d\t=\t%d\n", N, i, N * i);
+	} 
+	return 0;
+}
+
+(2)
+//write a C program to convet binary number to decimal number
+#include <stdio.h>
+#include <math.h>
+int main() 
+{
+long long n;
+int dec=0,i=0,rem;
+printf("Enter a binary number: ");
+scanf("%lld", &n);
+while (n != 0) 
+{
+	rem = n % 10;
+    	dec =dec+ rem * pow(2, i);
+    	++i;
+	n=n/10;
+}
+printf("%lld in binary = %d in decimal", n,dec);
+return 0;
+}
+
+(3)
+//Write a C program to compose the transpose of the matrix
+#include <stdio.h>
+int main() 
+{
+  int a[10][10], transpose[10][10], r, c;
+  printf("Enter rows and columns: ");
+  scanf("%d %d", &r, &c);
+
+  // asssigning elements to the matrix
+  printf("\nEnter matrix elements:\n");
+  for (int i = 0; i < r; ++i)
+  for (int j = 0; j < c; ++j) 
+  {
+    scanf("%d", &a[i][j]);
+  }
+  
+  // computing the transpose
+  for (int i = 0; i < r; ++i)
+  for (int j = 0; j < c; ++j)
+  {
+    transpose[j][i] = a[i][j];
+  }
+
+  // printing the transpose
+  printf("\nTranspose of the matrix:\n");
+  for (int i = 0; i < c; ++i)
+  for (int j = 0; j < r; ++j) 
+  {
+    printf("%d  ", transpose[i][j]);
+    if (j == r - 1)
+    printf("\n");
+  }
+  return 0;
+}
+
+(5)
+// C program to check if a character is a vowel or consonant
+#include <stdio.h>
+int main()
+{
+	char ch = 'A';
+	if (ch == 'a' || ch == 'A' || ch == 'e' || ch == 'E'|| ch == 'i' || ch == 'I' || ch == 'o' || ch == 'O'|| ch == 'u' || ch == 'U') 
+	{
+
+		printf("The character %c is a vowel.\n", ch);
+	}
+	else
+	{
+		printf("The character %c is a consonant.\n", ch);
+	}
+
+	return 0;
+}
+
+(6)
+//Write a C program to convert lowercase to uppercase character
+#include <stdio.h>
+#include <string.h>
+
+int main() {
+   char s[100];
+   int i;
+   printf("\nEnter a string : ");
+   gets(s);
+
+   for (i = 0; s[i]!='\0'; i++) {
+      if(s[i] >= 'a' && s[i] <= 'z') {
+         s[i] = s[i] - 32;
+      }
+   }
+   printf("\nString in Upper Case = %s", s);
+   return 0;
+}
+
+(7)
+//Write a C Program to replace all 0s with 1s in a given integer
+#include<stdio.h>
+int main()
+{
+int num,num2=0;
+printf("Enter number: ");
+scanf("%d", &num);
+if(num == 0)
+num2=1;
+while(num>0)
+{
+int rem = num%10;
+if(rem == 0)
+rem = 1;
+num = num/10;
+num2=num2*10+rem;
+}
+num = 0 ; // Store the reverse of num2
+while(num2>0)
+{
+int r = num2%10;
+num= num*10 + r;
+num2 /= 10;
+}
+printf("Converted number is: %d" ,num);
+return 0;
+}
+
+(8)
+//Write a C P rogram to print prime numbers from 1 to 100 using functions
+#include <stdio.h>
+int checkPrime(int num)
+{
+    // 0, 1 and negative numbers are not prime
+    if(num < 2){
+        return 0;
+    }
+    else{   
+    // no need to run loop till num-1 as for any number x the numbers in
+    // the range(num/2 + 1, num) won't be divisible anyways. 
+    // Example 36 wont be divisible by anything b/w 19-35
+        int x = num/2;
+        for(int i = 2; i <=x; i++)
+        {
+            if(num % i == 0)
+            {
+                return 0;
+            }
+        }
+    }
+    // the number would be prime if we reach here
+    return 1;
+}
+
+int main()
+{
+    int a = 1, b = 100;
+    
+    for(int i=a; i <= b; i++){
+        if(checkPrime(i))
+            printf("%d ",i);
+    }
+ 
+    return 0;
+}
+
+(9)
+//Write a C program to check the number of days in a given month
+// C program for the above approach 
+#include <stdio.h> 
+void printNumberOfDays(int N) 
+{ 
+
+	// Check for 31 Days 
+	if (N == 1 || N == 3 || N == 5 || N == 7 || N == 8 || N == 10 || N == 12)
+	{ 
+		printf("31 Days."); 
+	} 
+
+	// Check for 30 Days 
+	else if (N == 4 || N == 6 || N == 9 || N == 11)
+	{ 
+		printf("30 Days."); 
+	} 
+
+	// Check for 28/29 Days 
+	else if (N == 2) 
+	{ 
+		printf("28/29 Days."); 
+	} 
+
+	// Else Invalid Input 
+	else 
+	{ 
+		printf("Invalid Month."); 
+	} 
+} 
+int main() 
+{ 
+	// Input Month 
+	int N = 4; 
+
+	// Function Call 
+	printNumberOfDays(N); 
+
+	return 0; 
+}
+
+(11)
+// Write a C program to print the Floyd's Triangle
+#include <stdio.h>
+int main() 
+{
+   int n,i,j,k = 1;
+   printf("Enter the number of rows for for Floyd's Triangle ");
+   scanf("%d",&n);
+   for(i = 1; i <= n; i++)
+   {
+      for(j = 1;j <= i; j++)
+         printf("%3d", k++);
+
+      printf("\n");
+   }
+
+   return 0;
+}
+
+
+(13) 
+//Write a C program to calculate the standard deviation
+#include <stdio.h>
+#include<math.h>
+int main() 
+{
+    float a[50],sum=0,sum1=0meanv,sd;
+    int n,i;
+    printf("enter the number of observation:/n);
+    scanf("%d",&n);
+    printf+"Enter each observation:");
+    for(i=0;i<n;i++)/*accepting in array*/
+    {
+        scanf("%f",&a[i]);
+    }
+    for(i=0;<n;i++)/*sum of each value*/
+    {
+        sum=sum+a[i];
+    }
+    mean=sum/n;/*mean*/
+    for(i=0;i<n;i++)
+    {
+        sum1=sum1+(meana[i])/*variance*/
+    }
+    v=sum1/n;
+    sd=sqrt(v);/*std.dev*/
+    printf("nmean is%f",mean);
+    printf("\n mean is %f",mean);
+    Printf ("\n standard deviation is%f',sd);
+    return 0;
+}
