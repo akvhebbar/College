@@ -1,4 +1,4 @@
-mport java.util.Scanner;
+import java.util.Scanner;
 class BankDetails
 {
 private String accno;
@@ -46,8 +46,7 @@ balance = balance - amt;
 System.out.println("Balance after withdrawal: " + balance);
 } else
 {
-System.out.println("Your balance is less than " + amt +
-"\tTransaction failed...!!" );
+System.out.println("Your balance is less than " + amt +"\tTransaction failed...!!" );
 }
 }
 //method to search an account number
@@ -59,7 +58,8 @@ showAccount();
 return (true);
 }
 return (false);
-}}
+}
+}
 public class BankingApp
 {
 public static void main(String arg[])
