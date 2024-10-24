@@ -1,3 +1,9 @@
+
+/*Write a Java Program to demonstrate the working of the banking system, where it consisting of the functionalities.
+a. Display all account details. 
+b. Search by account number 
+c. Deposit the amount 
+d. Withdraw the amount*/
 import java.util.Scanner;
 
 class BankDetails {
