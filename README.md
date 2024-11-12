@@ -1,1 +1,1 @@
-This Repository contains codes executed in college for practise
+This Repository contains codes executed in College for lab practise
